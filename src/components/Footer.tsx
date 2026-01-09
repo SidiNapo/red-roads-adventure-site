@@ -1,0 +1,163 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
+import logo from "@/assets/logo.png";
+
+const Footer = () => {
+  return (
+    <footer className="bg-adventure-darker border-t border-border/30">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <Link to="/" className="flex items-center gap-3">
+              <img src={logo} alt="Red Roads Adventure" className="h-16 w-auto" />
+            </Link>
+            <p className="font-body text-muted-foreground leading-relaxed">
+              Experience the thrill of off-road adventures in the beautiful landscapes of Kebdana, Nador.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Instagram size={18} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
+                <Youtube size={18} />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h4 className="font-display text-xl tracking-wider text-foreground mb-6">
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {["Home", "Close Circle", "Balade", "About Us", "Contact"].map(
+                (link) => (
+                  <li key={link}>
+                    <Link
+                      to={
+                        link === "Home"
+                          ? "/"
+                          : `/${link.toLowerCase().replace(" ", "-")}`
+                      }
+                      className="font-body text-muted-foreground hover:text-primary transition-colors duration-300"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h4 className="font-display text-xl tracking-wider text-foreground mb-6">
+              Our Services
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "Quad Bike Rental",
+                "Cross Bike Rental",
+                "Guided Tours",
+                "Group Adventures",
+                "Private Sessions",
+              ].map((service) => (
+                <li key={service}>
+                  <span className="font-body text-muted-foreground">
+                    {service}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h4 className="font-display text-xl tracking-wider text-foreground mb-6">
+              Contact Us
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <span className="font-body text-muted-foreground">
+                  Kebdana, Nador<br />Morocco
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="font-body text-muted-foreground">
+                  +212 600 000 000
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="font-body text-muted-foreground">
+                  info@redroadsadventure.com
+                </span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-border/30">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="font-body text-sm text-muted-foreground">
+              © 2024 Red Roads Adventure. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a
+                href="#"
+                className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Terms of Service
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
