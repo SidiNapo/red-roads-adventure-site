@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Close Circle", path: "/close-circle" },
+  { name: "Accueil", path: "/" },
+  { name: "Cercle Privé", path: "/close-circle" },
   { name: "Balade", path: "/balade" },
-  { name: "About Us", path: "/about" },
+  { name: "À Propos", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -76,7 +76,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/reservation">Book Now</Link>
+              <Link to="/reservation">Réserver</Link>
             </Button>
           </div>
 
@@ -84,7 +84,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
+            aria-label="Menu"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -129,7 +129,7 @@ const Navbar = () => {
               >
                 <Button variant="hero" size="lg" className="w-full mt-4" asChild>
                   <Link to="/reservation" onClick={() => setIsMenuOpen(false)}>
-                    Book Now
+                    Réserver
                   </Link>
                 </Button>
               </motion.div>

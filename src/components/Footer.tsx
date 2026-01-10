@@ -19,7 +19,7 @@ const Footer = () => {
               <img src={logo} alt="Red Roads Adventure" className="h-16 w-auto" />
             </Link>
             <p className="font-body text-muted-foreground leading-relaxed">
-              Experience the thrill of off-road adventures in the beautiful landscapes of Kebdana, Nador.
+              Vivez le frisson des aventures tout-terrain dans les magnifiques paysages de Kebdana, Nador.
             </p>
             <div className="flex gap-4">
               <a
@@ -51,25 +51,25 @@ const Footer = () => {
             transition={{ delay: 0.1 }}
           >
             <h4 className="font-display text-xl tracking-wider text-foreground mb-6">
-              Quick Links
+              Liens Rapides
             </h4>
             <ul className="space-y-3">
-              {["Home", "Close Circle", "Balade", "About Us", "Contact"].map(
-                (link) => (
-                  <li key={link}>
-                    <Link
-                      to={
-                        link === "Home"
-                          ? "/"
-                          : `/${link.toLowerCase().replace(" ", "-")}`
-                      }
-                      className="font-body text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+                { label: "Accueil", path: "/" },
+                { label: "Cercle Privé", path: "/close-circle" },
+                { label: "Balade", path: "/balade" },
+                { label: "À Propos", path: "/about" },
+                { label: "Contact", path: "/contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.path}
+                    className="font-body text-muted-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -81,15 +81,15 @@ const Footer = () => {
             transition={{ delay: 0.2 }}
           >
             <h4 className="font-display text-xl tracking-wider text-foreground mb-6">
-              Our Services
+              Nos Services
             </h4>
             <ul className="space-y-3">
               {[
-                "Quad Bike Rental",
-                "Cross Bike Rental",
-                "Guided Tours",
-                "Group Adventures",
-                "Private Sessions",
+                "Location de Quads",
+                "Location de Motos Cross",
+                "Randonnées Guidées",
+                "Aventures en Groupe",
+                "Sessions Privées",
               ].map((service) => (
                 <li key={service}>
                   <span className="font-body text-muted-foreground">
@@ -108,13 +108,13 @@ const Footer = () => {
             transition={{ delay: 0.3 }}
           >
             <h4 className="font-display text-xl tracking-wider text-foreground mb-6">
-              Contact Us
+              Contactez-Nous
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="font-body text-muted-foreground">
-                  Kebdana, Nador<br />Morocco
+                  Kebdana, Nador<br />Maroc
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -137,20 +137,20 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border/30">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-body text-sm text-muted-foreground">
-              © 2024 Red Roads Adventure. All rights reserved.
+              © 2024 Red Roads Adventure. Tous droits réservés.
             </p>
             <div className="flex gap-6">
               <a
                 href="#"
                 className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                Privacy Policy
+                Politique de Confidentialité
               </a>
               <a
                 href="#"
                 className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                Terms of Service
+                Conditions Générales
               </a>
             </div>
           </div>
