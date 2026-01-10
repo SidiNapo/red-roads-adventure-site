@@ -4,6 +4,7 @@ import { Gauge, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface VehicleCardProps {
+  id?: string;
   type: "quad" | "cross";
   name: string;
   image: string;
@@ -14,6 +15,7 @@ interface VehicleCardProps {
 }
 
 const VehicleCard = ({
+  id,
   type,
   name,
   image,
@@ -23,18 +25,20 @@ const VehicleCard = ({
   features,
 }: VehicleCardProps) => {
   const isQuad = type === "quad";
+  const vehicleId = id || name.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6 }}
-      whileHover={{ y: -10 }}
-      className={`relative group overflow-hidden rounded-3xl border ${
-        isQuad ? "border-primary/30" : "border-secondary/30"
-      } bg-card`}
-    >
+    <Link to={`/vehicle/${vehicleId}`} className="block">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ y: -10 }}
+        className={`relative group overflow-hidden rounded-3xl border ${
+          isQuad ? "border-primary/30" : "border-secondary/30"
+        } bg-card cursor-pointer`}
+      >
       {/* Background Gradient */}
       <div
         className={`absolute inset-0 opacity-50 ${
@@ -132,15 +136,16 @@ const VehicleCard = ({
         </div>
       </div>
 
-      {/* Hover Glow Effect */}
-      <div
-        className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${
-          isQuad
-            ? "shadow-[inset_0_0_60px_hsl(0_72%_50%/0.1)]"
-            : "shadow-[inset_0_0_60px_hsl(145_40%_25%/0.1)]"
-        }`}
-      />
-    </motion.div>
+        {/* Hover Glow Effect */}
+        <div
+          className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none ${
+            isQuad
+              ? "shadow-[inset_0_0_60px_hsl(0_72%_50%/0.1)]"
+              : "shadow-[inset_0_0_60px_hsl(145_40%_25%/0.1)]"
+          }`}
+        />
+      </motion.div>
+    </Link>
   );
 };
 

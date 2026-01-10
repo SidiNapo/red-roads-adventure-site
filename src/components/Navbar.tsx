@@ -27,19 +27,24 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <motion.img
-              src={logo}
-              alt="Red Roads Adventure"
-              className="h-14 w-auto"
+          <Link to="/" className="flex items-center gap-4 group">
+            <motion.div
+              className="relative"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
-            />
+            >
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <img
+                src={logo}
+                alt="Red Roads Adventure"
+                className="h-16 w-auto relative z-10 drop-shadow-[0_0_10px_rgba(220,38,38,0.3)]"
+              />
+            </motion.div>
             <div className="hidden sm:flex flex-col">
-              <span className="font-display text-xl text-primary tracking-wider">
+              <span className="font-display text-2xl text-primary tracking-wider drop-shadow-[0_0_8px_rgba(220,38,38,0.4)]">
                 RED ROADS
               </span>
-              <span className="font-display text-sm text-muted-foreground tracking-widest">
+              <span className="font-display text-xs text-muted-foreground tracking-[0.3em]">
                 ADVENTURE
               </span>
             </div>
