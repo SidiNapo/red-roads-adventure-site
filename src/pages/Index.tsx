@@ -7,45 +7,9 @@ import VehicleCard from "@/components/VehicleCard";
 import TourCard from "@/components/TourCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import quad1 from "@/assets/quad-1.jpg";
-import quad2 from "@/assets/quad-2.jpg";
-import cross1 from "@/assets/cross-1.jpg";
-import cross2 from "@/assets/cross-2.jpg";
 import trail1 from "@/assets/trail-1.jpg";
 import trail2 from "@/assets/trail-2.jpg";
-const vehicles = [{
-  type: "quad" as const,
-  name: "Raptor 700R",
-  image: quad1,
-  engine: "686cc",
-  power: "50 CV",
-  price: "400 MAD/h",
-  features: ["Automatique", "4x4", "Mode Sport"]
-}, {
-  type: "quad" as const,
-  name: "Outlander X3",
-  image: quad2,
-  engine: "900cc",
-  power: "72 CV",
-  price: "500 MAD/h",
-  features: ["Manuel", "4x4", "Turbo"]
-}, {
-  type: "cross" as const,
-  name: "CRF450X",
-  image: cross1,
-  engine: "449cc",
-  power: "55 CV",
-  price: "350 MAD/h",
-  features: ["Niveau Pro", "Léger", "Prêt Course"]
-}, {
-  type: "cross" as const,
-  name: "KTM 450 EXC",
-  image: cross2,
-  engine: "510cc",
-  power: "63 CV",
-  price: "450 MAD/h",
-  features: ["Enduro", "6 Vitesses", "Suspension Pro"]
-}];
+import { vehicles } from "@/data/vehicles";
 const tours = [{
   title: "Découverte Forêt",
   duration: "30 min",

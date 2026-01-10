@@ -15,8 +15,23 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="Red Roads Adventure" className="h-16 w-auto" />
+            <Link to="/" className="flex items-center gap-4 group">
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img 
+                  src={logo} 
+                  alt="Red Roads Adventure" 
+                  className="h-20 w-auto relative z-10 drop-shadow-[0_0_15px_rgba(220,38,38,0.4)]" 
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-2xl text-primary tracking-wider drop-shadow-[0_0_8px_rgba(220,38,38,0.4)]">
+                  RED ROADS
+                </span>
+                <span className="font-display text-xs text-muted-foreground tracking-[0.3em]">
+                  ADVENTURE
+                </span>
+              </div>
             </Link>
             <p className="font-body text-muted-foreground leading-relaxed">
               Vivez le frisson des aventures tout-terrain dans les magnifiques paysages de Kebdana, Nador.
