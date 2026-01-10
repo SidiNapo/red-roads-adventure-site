@@ -10,21 +10,21 @@ import hero3 from "@/assets/hero-3.jpg";
 const heroSlides = [
   {
     image: hero1,
-    title: "CONQUER THE",
-    highlight: "RED ROADS",
-    subtitle: "Experience the ultimate quad adventure in Morocco",
+    title: "CONQUÉREZ LES",
+    highlight: "PISTES ROUGES",
+    subtitle: "Vivez l'aventure ultime en quad au Maroc",
   },
   {
     image: hero2,
-    title: "RIDE THE",
-    highlight: "WILD TRAILS",
-    subtitle: "Cross bikes for the fearless explorer",
+    title: "DOMPTEZ LES",
+    highlight: "SENTIERS SAUVAGES",
+    subtitle: "Des motos cross pour les explorateurs intrépides",
   },
   {
     image: hero3,
-    title: "DISCOVER",
-    highlight: "MOROCCO",
-    subtitle: "Unforgettable adventures in Kebdana, Nador",
+    title: "DÉCOUVREZ LE",
+    highlight: "MAROC",
+    subtitle: "Des aventures inoubliables à Kebdana, Nador",
   },
 ];
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
         >
           <img
             src={heroSlides[currentSlide].image}
-            alt="Adventure"
+            alt="Aventure"
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -86,7 +86,7 @@ const HeroSection = () => {
               >
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="font-body text-sm text-primary font-semibold tracking-wider uppercase">
-                  Kebdana, Nador - Morocco
+                  Kebdana, Nador - Maroc
                 </span>
               </motion.div>
 
@@ -114,14 +114,14 @@ const HeroSection = () => {
               >
                 <Button variant="hero" size="xl" asChild>
                   <Link to="/reservation" className="group">
-                    Book Your Adventure
+                    Réservez Votre Aventure
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button variant="heroOutline" size="xl" asChild>
                   <Link to="/balade" className="group">
                     <Play className="w-5 h-5" />
-                    Explore Tours
+                    Explorer les Circuits
                   </Link>
                 </Button>
               </motion.div>
@@ -158,7 +158,7 @@ const HeroSection = () => {
         className="absolute bottom-8 right-8 z-10 flex flex-col items-center gap-2"
       >
         <span className="font-body text-xs text-muted-foreground tracking-widest uppercase rotate-90 origin-center translate-y-6">
-          Scroll
+          Défiler
         </span>
         <motion.div
           animate={{ y: [0, 10, 0] }}

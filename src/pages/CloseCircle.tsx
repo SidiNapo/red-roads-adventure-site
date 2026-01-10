@@ -17,59 +17,59 @@ const vehicles = [
     name: "Raptor 700R",
     image: quad1,
     engine: "686cc",
-    power: "50 HP",
+    power: "50 CV",
     price: "400 MAD/h",
-    features: ["Automatic", "4x4", "Sport Mode"],
+    features: ["Automatique", "4x4", "Mode Sport"],
   },
   {
     type: "quad" as const,
     name: "Outlander X3",
     image: quad2,
     engine: "900cc",
-    power: "72 HP",
+    power: "72 CV",
     price: "500 MAD/h",
-    features: ["Manual", "4x4", "Turbo"],
+    features: ["Manuel", "4x4", "Turbo"],
   },
   {
     type: "cross" as const,
     name: "CRF450X",
     image: cross1,
     engine: "449cc",
-    power: "55 HP",
+    power: "55 CV",
     price: "350 MAD/h",
-    features: ["Pro Level", "Lightweight", "Race Ready"],
+    features: ["Niveau Pro", "Léger", "Prêt Course"],
   },
   {
     type: "cross" as const,
     name: "KTM 450 EXC",
     image: cross2,
     engine: "510cc",
-    power: "63 HP",
+    power: "63 CV",
     price: "450 MAD/h",
-    features: ["Enduro", "6-Speed", "Pro Suspension"],
+    features: ["Enduro", "6 Vitesses", "Suspension Pro"],
   },
 ];
 
 const benefits = [
   {
     icon: Lock,
-    title: "Exclusive Access",
-    description: "Priority booking and access to premium trails",
+    title: "Accès Exclusif",
+    description: "Réservation prioritaire et accès aux pistes premium",
   },
   {
     icon: Star,
-    title: "VIP Treatment",
-    description: "Personal guides and customized experiences",
+    title: "Traitement VIP",
+    description: "Guides personnels et expériences sur mesure",
   },
   {
     icon: Zap,
-    title: "Latest Models",
-    description: "First access to new vehicles in our fleet",
+    title: "Derniers Modèles",
+    description: "Premier accès aux nouveaux véhicules de notre flotte",
   },
   {
     icon: Users,
-    title: "Community Events",
-    description: "Join exclusive group rides and adventures",
+    title: "Événements Communautaires",
+    description: "Rejoignez des sorties et aventures de groupe exclusives",
   },
 ];
 
@@ -91,7 +91,7 @@ const CloseCircle = () => {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block font-body text-sm text-primary font-semibold tracking-widest uppercase mb-4"
           >
-            Exclusive Membership
+            Adhésion Exclusive
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -99,7 +99,7 @@ const CloseCircle = () => {
             transition={{ delay: 0.1 }}
             className="font-display text-5xl md:text-7xl text-foreground tracking-wider"
           >
-            CLOSE CIRCLE
+            CERCLE PRIVÉ
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ const CloseCircle = () => {
             transition={{ delay: 0.2 }}
             className="font-body text-lg text-muted-foreground mt-4 max-w-xl mx-auto"
           >
-            Join our exclusive community of adventure enthusiasts
+            Rejoignez notre communauté exclusive de passionnés d'aventure
           </motion.p>
         </div>
       </section>
@@ -150,10 +150,10 @@ const CloseCircle = () => {
             className="text-center mb-16"
           >
             <span className="font-body text-sm text-primary font-semibold tracking-widest uppercase">
-              Premium Fleet
+              Flotte Premium
             </span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground tracking-wider">
-              OUR VEHICLES
+              NOS VÉHICULES
             </h2>
           </motion.div>
 
@@ -175,14 +175,14 @@ const CloseCircle = () => {
             className="max-w-2xl mx-auto text-center"
           >
             <h2 className="font-display text-4xl text-foreground tracking-wider mb-6">
-              JOIN THE CIRCLE
+              REJOIGNEZ LE CERCLE
             </h2>
             <p className="font-body text-muted-foreground mb-8">
-              Ready to become part of our exclusive community? Contact us to
-              learn more about membership benefits.
+              Prêt à faire partie de notre communauté exclusive ? Contactez-nous pour
+              en savoir plus sur les avantages de l'adhésion.
             </p>
             <Button variant="hero" size="xl" asChild>
-              <Link to="/contact">Get In Touch</Link>
+              <Link to="/contact">Nous Contacter</Link>
             </Button>
           </motion.div>
         </div>

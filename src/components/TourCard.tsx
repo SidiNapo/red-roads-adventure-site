@@ -85,12 +85,12 @@ const TourCard = ({
         <div className="flex items-center justify-between pt-4 border-t border-border/50">
           <div>
             <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">
-              Per person
+              Par personne
             </p>
             <p className="font-display text-2xl text-primary">{price}</p>
           </div>
           <Button variant="adventure" size="default" asChild>
-            <Link to="/reservation">Reserve</Link>
+            <Link to="/reservation">Réserver</Link>
           </Button>
         </div>
       </div>

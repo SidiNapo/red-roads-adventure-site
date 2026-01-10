@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Gauge, Zap, Shield, Clock } from "lucide-react";
+import { Gauge, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface VehicleCardProps {
@@ -116,7 +116,7 @@ const VehicleCard = ({
         <div className="flex items-center justify-between pt-4 border-t border-border/50">
           <div>
             <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">
-              Starting from
+              À partir de
             </p>
             <p
               className={`font-display text-2xl ${
@@ -127,7 +127,7 @@ const VehicleCard = ({
             </p>
           </div>
           <Button variant={isQuad ? "quad" : "cross"} size="default" asChild>
-            <Link to="/reservation">Book Now</Link>
+            <Link to="/reservation">Réserver</Link>
           </Button>
         </div>
       </div>

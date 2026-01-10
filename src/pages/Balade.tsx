@@ -9,64 +9,64 @@ import hero3 from "@/assets/hero-3.jpg";
 
 const tours = [
   {
-    title: "Quick Discovery",
+    title: "Découverte Rapide",
     duration: "30 min",
     groupSize: "2-4",
-    location: "Forest Trail",
+    location: "Sentier Forêt",
     image: trail1,
     price: "200 MAD",
     description:
-      "Perfect for beginners. A quick taste of off-road adventure through scenic forest paths.",
+      "Parfait pour les débutants. Un avant-goût de l'aventure tout-terrain à travers des chemins forestiers pittoresques.",
   },
   {
-    title: "Forest Explorer",
-    duration: "1 hour",
+    title: "Explorateur Forêt",
+    duration: "1 heure",
     groupSize: "2-6",
-    location: "Kebdana Forest",
+    location: "Forêt Kebdana",
     image: trail2,
     price: "350 MAD",
     description:
-      "Explore the heart of Kebdana's forests with varied terrain and beautiful viewpoints.",
+      "Explorez le cœur des forêts de Kebdana avec des terrains variés et de beaux points de vue.",
   },
   {
-    title: "Coastal Adventure",
-    duration: "1.5 hours",
+    title: "Aventure Côtière",
+    duration: "1h30",
     groupSize: "2-8",
-    location: "Coast & Forest",
+    location: "Côte & Forêt",
     image: trail1,
     price: "500 MAD",
     description:
-      "Experience both forest trails and coastal views on this extended adventure.",
+      "Découvrez à la fois les sentiers forestiers et les vues côtières lors de cette aventure prolongée.",
   },
   {
-    title: "Ultimate Experience",
-    duration: "2 hours",
+    title: "Expérience Ultime",
+    duration: "2 heures",
     groupSize: "4-10",
-    location: "Full Circuit",
+    location: "Circuit Complet",
     image: trail2,
     price: "700 MAD",
     description:
-      "The complete Red Roads experience with all terrain types and premium stops.",
+      "L'expérience Red Roads complète avec tous types de terrains et des arrêts premium.",
   },
   {
-    title: "Sunset Safari",
-    duration: "2.5 hours",
+    title: "Safari Coucher de Soleil",
+    duration: "2h30",
     groupSize: "2-6",
-    location: "Scenic Route",
+    location: "Route Panoramique",
     image: trail1,
     price: "850 MAD",
     description:
-      "A magical evening ride culminating with sunset views over the Mediterranean.",
+      "Une balade magique en soirée culminant avec des vues du coucher de soleil sur la Méditerranée.",
   },
   {
-    title: "Full Day Adventure",
-    duration: "4 hours",
+    title: "Aventure Journée Complète",
+    duration: "4 heures",
     groupSize: "4-8",
-    location: "Multi-Zone",
+    location: "Multi-Zones",
     image: trail2,
     price: "1200 MAD",
     description:
-      "The ultimate adventure package with lunch break and multiple trail experiences.",
+      "Le forfait aventure ultime avec pause déjeuner et multiples expériences de pistes.",
   },
 ];
 
@@ -88,7 +88,7 @@ const Balade = () => {
             animate={{ opacity: 1, y: 0 }}
             className="inline-block font-body text-sm text-primary font-semibold tracking-widest uppercase mb-4"
           >
-            Guided Tours
+            Circuits Guidés
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -104,7 +104,7 @@ const Balade = () => {
             transition={{ delay: 0.2 }}
             className="font-body text-lg text-muted-foreground mt-4 max-w-xl mx-auto"
           >
-            Discover Morocco's stunning landscapes on our guided tour packages
+            Découvrez les paysages époustouflants du Maroc avec nos forfaits de circuits guidés
           </motion.p>
         </div>
       </section>
@@ -119,14 +119,14 @@ const Balade = () => {
             className="text-center mb-16"
           >
             <span className="font-body text-sm text-primary font-semibold tracking-widest uppercase">
-              Choose Your Adventure
+              Choisissez Votre Aventure
             </span>
             <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground tracking-wider">
-              TOUR PACKAGES
+              FORFAITS CIRCUITS
             </h2>
             <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto">
-              From quick discovery rides to full-day expeditions, we have the
-              perfect adventure for everyone
+              Des balades découverte rapides aux expéditions d'une journée complète, nous avons
+              l'aventure parfaite pour tout le monde
             </p>
           </motion.div>
 
@@ -148,16 +148,16 @@ const Balade = () => {
               viewport={{ once: true }}
             >
               <h2 className="font-display text-4xl text-foreground tracking-wider mb-6">
-                WHAT'S INCLUDED
+                CE QUI EST INCLUS
               </h2>
               <ul className="space-y-4">
                 {[
-                  "Professional guide with local knowledge",
-                  "Safety equipment (helmet, gloves, goggles)",
-                  "Vehicle of your choice",
-                  "Safety briefing and training",
-                  "Water and refreshments",
-                  "Photo opportunities at scenic stops",
+                  "Guide professionnel avec connaissance locale",
+                  "Équipement de sécurité (casque, gants, lunettes)",
+                  "Véhicule de votre choix",
+                  "Briefing et formation sécurité",
+                  "Eau et rafraîchissements",
+                  "Opportunités photos aux arrêts panoramiques",
                 ].map((item, index) => (
                   <motion.li
                     key={item}
@@ -183,7 +183,7 @@ const Balade = () => {
             >
               <img
                 src={trail1}
-                alt="Trail"
+                alt="Piste"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
