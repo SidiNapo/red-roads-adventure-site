@@ -71,7 +71,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-foreground" aria-label="Menu">
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={28} className="text-black" /> : <Menu size={28} />}
           </button>
         </nav>
       </div>
