@@ -32,7 +32,7 @@ const Navbar = () => {
     ease: "easeOut"
   }} className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 bg-white">
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-20 border-none">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.img src={logo} alt="Red Roads Adventure" className="h-14 w-auto" whileHover={{
@@ -71,7 +71,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-foreground" aria-label="Menu">
-            {isMenuOpen ? <X size={28} className="text-red-600 bg-destructive" /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={28} className="text-black bg-primary border-black border" /> : <Menu size={28} />}
           </button>
         </nav>
       </div>
