@@ -35,16 +35,16 @@ const Navbar = () => {
         <nav className="flex items-center justify-between h-20 border-none">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <motion.img src={logo} alt="Red Roads Adventure" className="h-14 w-auto" whileHover={{
+            <motion.img src={logo} alt="Red Roads Adventure" className="h-16 sm:h-14 w-auto drop-shadow-sm" whileHover={{
             scale: 1.05
           }} transition={{
             duration: 0.2
           }} />
-            <div className="hidden sm:flex flex-col">
-              <span className="font-display text-xl text-primary tracking-wider">
+            <div className="flex flex-col leading-tight">
+              <span className="font-display text-lg sm:text-xl tracking-wider bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent">
                 RED ROADS
               </span>
-              <span className="font-display text-sm text-muted-foreground tracking-widest">
+              <span className="font-display text-xs sm:text-sm text-muted-foreground tracking-[0.3em]">
                 ADVENTURE
               </span>
             </div>
@@ -70,8 +70,8 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 text-foreground" aria-label="Menu">
-            {isMenuOpen ? <X size={28} className="text-black bg-primary border-black border" /> : <Menu size={28} />}
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden p-2 rounded-md text-black hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30" aria-label="Menu">
+            {isMenuOpen ? <X size={28} className="text-black" /> : <Menu size={28} className="text-black" />}
           </button>
         </nav>
       </div>
