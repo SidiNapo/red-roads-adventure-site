@@ -171,11 +171,7 @@ const About = () => {
 
       {/* Nature Gallery Strip */}
       <section className="py-4 bg-card/50 overflow-hidden">
-        <div className="flex gap-4 animate-marquee">
-          {[nature1, nature2, nature3, trail1, trail2, nature1, nature2, nature3].map((img, i) => <div key={i} className="flex-shrink-0 w-80 h-48 rounded-2xl overflow-hidden">
-              <img src={img} alt="Paysage" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-            </div>)}
-        </div>
+        
       </section>
 
       {/* Story Section */}
