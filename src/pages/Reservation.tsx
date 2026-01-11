@@ -87,7 +87,7 @@ const Reservation = () => {
       <Navbar />
 
       {/* Hero Section - Modern & Stunning */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] md:h-[85vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Multi-layer background with images */}
         <div className="absolute inset-0">
           <motion.div 
@@ -107,12 +107,12 @@ const Reservation = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
 
-        {/* Floating vehicle images */}
+        {/* Floating vehicle images - Hidden on smaller screens */}
         <motion.div 
           initial={{ opacity: 0, x: -80, rotate: -12 }}
           animate={{ opacity: 1, x: 0, rotate: -12 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="absolute left-8 top-1/3 hidden xl:block"
+          className="absolute left-8 top-1/3 hidden 2xl:block"
         >
           <div className="w-52 h-52 rounded-2xl overflow-hidden border-2 border-quad/30 shadow-adventure">
             <img src={quad1} alt="Quad" className="w-full h-full object-cover" />
@@ -126,7 +126,7 @@ const Reservation = () => {
           initial={{ opacity: 0, x: 80, rotate: 12 }}
           animate={{ opacity: 1, x: 0, rotate: 12 }}
           transition={{ delay: 0.7, duration: 1 }}
-          className="absolute right-8 top-1/3 hidden xl:block"
+          className="absolute right-8 top-1/3 hidden 2xl:block"
         >
           <div className="w-52 h-52 rounded-2xl overflow-hidden border-2 border-cross/30 shadow-adventure">
             <img src={cross1} alt="Cross" className="w-full h-full object-cover" />
@@ -136,26 +136,26 @@ const Reservation = () => {
           </div>
         </motion.div>
 
-        {/* Background text */}
+        {/* Background text - Hidden on mobile */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.03 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          className="absolute inset-0 items-center justify-center pointer-events-none hidden md:flex"
         >
-          <span className="font-display text-[20rem] text-foreground tracking-wider">BOOK</span>
+          <span className="font-display text-[10rem] md:text-[15rem] lg:text-[20rem] text-foreground tracking-wider">BOOK</span>
         </motion.div>
 
         {/* Main content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-8 md:py-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="mb-6"
+            className="mb-4 md:mb-6"
           >
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-cross/20 flex items-center justify-center mx-auto backdrop-blur-sm border border-primary/30">
-              <Bike className="w-10 h-10 text-primary" />
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-primary/20 to-cross/20 flex items-center justify-center mx-auto backdrop-blur-sm border border-primary/30">
+              <Bike className="w-8 h-8 md:w-10 md:h-10 text-primary" />
             </div>
           </motion.div>
 
@@ -163,7 +163,7 @@ const Reservation = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="inline-block font-body text-sm text-primary font-semibold tracking-[0.3em] uppercase mb-6"
+            className="inline-block font-body text-xs sm:text-sm text-primary font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 md:mb-6"
           >
             Réservez Votre Aventure
           </motion.span>
@@ -172,7 +172,7 @@ const Reservation = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground tracking-wider mb-6"
+            className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground tracking-wider mb-4 md:mb-6"
           >
             RÉSERVATION
           </motion.h1>
@@ -181,7 +181,7 @@ const Reservation = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+            className="font-body text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-8 px-2"
           >
             Choisissez votre véhicule, votre durée, et préparez-vous pour une aventure 
             inoubliable dans les paysages époustouflants de Kebdana.
@@ -192,7 +192,7 @@ const Reservation = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4"
           >
             {features.map((feature, index) => (
               <motion.div
@@ -200,21 +200,21 @@ const Reservation = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.9 + index * 0.1 }}
-                className="flex items-center gap-3 bg-card/50 backdrop-blur-sm rounded-full px-5 py-3 border border-border/50"
+                className="flex items-center gap-2 sm:gap-3 bg-card/50 backdrop-blur-sm rounded-full px-3 sm:px-5 py-2 sm:py-3 border border-border/50"
               >
-                <feature.icon className="w-5 h-5 text-primary" />
-                <span className="font-body text-sm text-foreground">{feature.title}</span>
+                <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                <span className="font-body text-xs sm:text-sm text-foreground">{feature.title}</span>
               </motion.div>
             ))}
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Hidden on mobile */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

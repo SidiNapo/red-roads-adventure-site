@@ -39,7 +39,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden pt-20">
       {/* Background Images */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -91,11 +91,11 @@ const HeroSection = () => {
               </motion.div>
 
               {/* Title */}
-              <div className="space-y-2">
-                <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground tracking-wider hero-text-shadow">
+              <div className="space-y-1 md:space-y-2">
+                <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground tracking-wider hero-text-shadow leading-tight">
                   {heroSlides[currentSlide].title}
                 </h1>
-                <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-gradient-hero tracking-wider">
+                <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-gradient-hero tracking-wider leading-tight">
                   {heroSlides[currentSlide].highlight}
                 </h1>
               </div>
@@ -131,13 +131,13 @@ const HeroSection = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-3">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2 sm:gap-3">
         {heroSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`relative h-2 rounded-full transition-all duration-500 ${
-              index === currentSlide ? "w-12 bg-primary" : "w-2 bg-foreground/30"
+              index === currentSlide ? "w-8 sm:w-12 bg-primary" : "w-2 bg-foreground/30"
             }`}
           >
             {index === currentSlide && (
@@ -150,12 +150,12 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-8 right-8 z-10 flex flex-col items-center gap-2"
+        className="hidden md:flex absolute bottom-8 right-8 z-10 flex-col items-center gap-2"
       >
         <span className="font-body text-xs text-muted-foreground tracking-widest uppercase rotate-90 origin-center translate-y-6">
           Défiler
