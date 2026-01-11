@@ -76,17 +76,17 @@ const Balade = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden pt-20">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${hero3})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
-        <div className="relative z-10 text-center px-4">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+        <div className="relative z-10 text-center px-4 py-12 md:py-0">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block font-body text-sm text-primary font-semibold tracking-widest uppercase mb-4"
+            className="inline-block font-body text-xs sm:text-sm text-primary font-semibold tracking-widest uppercase mb-4"
           >
             Circuits Guidés
           </motion.span>
@@ -94,7 +94,7 @@ const Balade = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-display text-5xl md:text-7xl text-foreground tracking-wider"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground tracking-wider"
           >
             BALADE
           </motion.h1>
@@ -102,7 +102,7 @@ const Balade = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="font-body text-lg text-muted-foreground mt-4 max-w-xl mx-auto"
+            className="font-body text-base sm:text-lg text-muted-foreground mt-4 max-w-xl mx-auto px-4"
           >
             Découvrez les paysages époustouflants du Maroc avec nos forfaits de circuits guidés
           </motion.p>

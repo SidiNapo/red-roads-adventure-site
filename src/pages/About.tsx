@@ -30,7 +30,7 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section - Modern & Stunning */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] md:h-[85vh] flex items-center justify-center overflow-hidden pt-20">
         {/* Multi-layer background with parallax effect */}
         <div className="absolute inset-0">
           <motion.div initial={{
@@ -49,9 +49,8 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80" />
         
-        {/* Decorative elements */}
-        
-        <div className="absolute bottom-40 right-20 w-24 h-24 border border-primary/30 rotate-45" />
+        {/* Decorative elements - Hidden on mobile */}
+        <div className="absolute bottom-40 right-20 w-24 h-24 border border-primary/30 rotate-45 hidden lg:block" />
         <motion.div initial={{
         opacity: 0,
         y: 50
@@ -61,12 +60,12 @@ const About = () => {
       }} transition={{
         delay: 0.5,
         duration: 1
-      }} className="absolute left-0 top-1/2 -translate-y-1/2 font-display text-[20rem] text-foreground/5 tracking-wider whitespace-nowrap">
+      }} className="absolute left-0 top-1/2 -translate-y-1/2 font-display text-[8rem] md:text-[15rem] lg:text-[20rem] text-foreground/5 tracking-wider whitespace-nowrap hidden md:block">
           AVENTURE
         </motion.div>
 
         {/* Main content */}
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto py-8 md:py-0">
           <motion.div initial={{
           opacity: 0,
           scale: 0.8
@@ -75,11 +74,11 @@ const About = () => {
           scale: 1
         }} transition={{
           duration: 0.8
-        }} className="mb-8">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary" />
-              <Compass className="w-8 h-8 text-primary animate-float" />
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary" />
+        }} className="mb-6 md:mb-8">
+            <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-6">
+              <div className="h-px w-8 md:w-16 bg-gradient-to-r from-transparent to-primary" />
+              <Compass className="w-6 h-6 md:w-8 md:h-8 text-primary animate-float" />
+              <div className="h-px w-8 md:w-16 bg-gradient-to-l from-transparent to-primary" />
             </div>
           </motion.div>
 
@@ -91,7 +90,7 @@ const About = () => {
           y: 0
         }} transition={{
           delay: 0.2
-        }} className="inline-block font-body text-sm text-primary font-semibold tracking-[0.3em] uppercase mb-6">
+        }} className="inline-block font-body text-xs sm:text-sm text-primary font-semibold tracking-[0.2em] sm:tracking-[0.3em] uppercase mb-4 md:mb-6">
             Découvrez Notre Histoire
           </motion.span>
 
@@ -104,7 +103,7 @@ const About = () => {
         }} transition={{
           delay: 0.3,
           duration: 0.8
-        }} className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground tracking-wider mb-6">
+        }} className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground tracking-wider mb-4 md:mb-6">
             À PROPOS
           </motion.h1>
 
@@ -116,7 +115,7 @@ const About = () => {
           y: 0
         }} transition={{
           delay: 0.5
-        }} className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+        }} className="font-body text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-8 px-2">
             Passionnés par l'aventure et les paysages époustouflants de Kebdana, 
             nous créons des expériences inoubliables depuis le cœur du Maroc.
           </motion.p>
@@ -130,7 +129,7 @@ const About = () => {
           y: 0
         }} transition={{
           delay: 0.7
-        }} className="flex flex-wrap justify-center gap-8 md:gap-16">
+        }} className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16">
             {[{
             value: "500+",
             label: "Aventures"
@@ -141,20 +140,20 @@ const About = () => {
             value: "100%",
             label: "Passion"
           }].map(stat => <div key={stat.label} className="text-center">
-                <div className="font-display text-4xl md:text-5xl text-primary">{stat.value}</div>
-                <div className="font-body text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
+                <div className="font-display text-3xl sm:text-4xl md:text-5xl text-primary">{stat.value}</div>
+                <div className="font-body text-xs sm:text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
               </div>)}
           </motion.div>
         </div>
 
-        {/* Bottom fade scroll indicator */}
+        {/* Bottom fade scroll indicator - Hidden on mobile */}
         <motion.div initial={{
         opacity: 0
       }} animate={{
         opacity: 1
       }} transition={{
         delay: 1
-      }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      }} className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block">
           <div className="flex flex-col items-center gap-2">
             <span className="font-body text-xs text-muted-foreground uppercase tracking-widest">Découvrir</span>
             <motion.div animate={{

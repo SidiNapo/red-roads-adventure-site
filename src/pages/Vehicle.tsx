@@ -33,7 +33,7 @@ const Vehicle = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 relative overflow-hidden">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-30">
           <div className={`absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl ${
@@ -56,7 +56,7 @@ const Vehicle = () => {
             <span className="font-body">Retour</span>
           </motion.button>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -64,7 +64,7 @@ const Vehicle = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className={`absolute inset-0 rounded-3xl ${
+              <div className={`absolute inset-0 rounded-2xl md:rounded-3xl ${
                 isQuad 
                   ? "bg-gradient-to-br from-primary/30 via-transparent to-primary/10" 
                   : "bg-gradient-to-br from-secondary/30 via-transparent to-secondary/10"
@@ -72,20 +72,20 @@ const Vehicle = () => {
               <motion.img
                 src={vehicle.image}
                 alt={vehicle.name}
-                className="w-full h-[400px] md:h-[500px] object-cover rounded-3xl"
+                className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] object-cover rounded-2xl md:rounded-3xl"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
               {/* Type Badge */}
-              <div className={`absolute top-6 left-6 px-6 py-2 rounded-full font-display text-sm tracking-widest ${
+              <div className={`absolute top-4 left-4 md:top-6 md:left-6 px-4 md:px-6 py-1.5 md:py-2 rounded-full font-display text-xs md:text-sm tracking-widest ${
                 isQuad
                   ? "bg-primary/90 text-primary-foreground"
                   : "bg-secondary/90 text-secondary-foreground"
               }`}>
                 {vehicle.type.toUpperCase()}
               </div>
-              {/* Decorative Elements */}
-              <div className={`absolute -bottom-4 -right-4 w-32 h-32 rounded-full blur-xl ${
+              {/* Decorative Elements - Hidden on mobile */}
+              <div className={`absolute -bottom-4 -right-4 w-20 md:w-32 h-20 md:h-32 rounded-full blur-xl hidden sm:block ${
                 isQuad ? "bg-primary/30" : "bg-secondary/30"
               }`} />
             </motion.div>
@@ -95,47 +95,47 @@ const Vehicle = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
               <div>
-                <span className={`font-body text-sm font-semibold tracking-widest uppercase ${
+                <span className={`font-body text-xs sm:text-sm font-semibold tracking-widest uppercase ${
                   isQuad ? "text-primary" : "text-green-500"
                 }`}>
                   {isQuad ? "Quad Haute Performance" : "Moto Cross Professionnelle"}
                 </span>
-                <h1 className="font-display text-5xl md:text-6xl text-foreground tracking-wider mt-2">
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wider mt-2">
                   {vehicle.name}
                 </h1>
               </div>
 
-              <p className="font-body text-lg text-muted-foreground leading-relaxed">
+              <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed">
                 {vehicle.description}
               </p>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className={`p-4 rounded-2xl border ${
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div className={`p-3 md:p-4 rounded-xl md:rounded-2xl border ${
                   isQuad ? "border-primary/30 bg-primary/5" : "border-secondary/30 bg-secondary/5"
                 }`}>
-                  <Gauge className={`w-6 h-6 mb-2 ${isQuad ? "text-primary" : "text-green-500"}`} />
-                  <p className="font-body text-sm text-muted-foreground">Moteur</p>
-                  <p className="font-display text-2xl text-foreground">{vehicle.engine}</p>
+                  <Gauge className={`w-5 h-5 md:w-6 md:h-6 mb-1 md:mb-2 ${isQuad ? "text-primary" : "text-green-500"}`} />
+                  <p className="font-body text-xs md:text-sm text-muted-foreground">Moteur</p>
+                  <p className="font-display text-lg md:text-2xl text-foreground">{vehicle.engine}</p>
                 </div>
-                <div className={`p-4 rounded-2xl border ${
+                <div className={`p-3 md:p-4 rounded-xl md:rounded-2xl border ${
                   isQuad ? "border-primary/30 bg-primary/5" : "border-secondary/30 bg-secondary/5"
                 }`}>
-                  <Zap className={`w-6 h-6 mb-2 ${isQuad ? "text-primary" : "text-green-500"}`} />
-                  <p className="font-body text-sm text-muted-foreground">Puissance</p>
-                  <p className="font-display text-2xl text-foreground">{vehicle.power}</p>
+                  <Zap className={`w-5 h-5 md:w-6 md:h-6 mb-1 md:mb-2 ${isQuad ? "text-primary" : "text-green-500"}`} />
+                  <p className="font-body text-xs md:text-sm text-muted-foreground">Puissance</p>
+                  <p className="font-display text-lg md:text-2xl text-foreground">{vehicle.power}</p>
                 </div>
               </div>
 
               {/* Features */}
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 {vehicle.features.map((feature) => (
                   <span
                     key={feature}
-                    className={`px-4 py-2 rounded-full font-body text-sm ${
+                    className={`px-3 md:px-4 py-1.5 md:py-2 rounded-full font-body text-xs md:text-sm ${
                       isQuad
                         ? "bg-primary/10 text-primary border border-primary/30"
                         : "bg-secondary/10 text-green-500 border border-secondary/30"
@@ -147,19 +147,19 @@ const Vehicle = () => {
               </div>
 
               {/* Price & CTA */}
-              <div className={`p-6 rounded-2xl border ${
+              <div className={`p-4 md:p-6 rounded-xl md:rounded-2xl border ${
                 isQuad ? "border-primary/30 bg-primary/5" : "border-secondary/30 bg-secondary/5"
               }`}>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <p className="font-body text-sm text-muted-foreground uppercase tracking-wider">
+                    <p className="font-body text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
                       Tarif Location
                     </p>
-                    <p className={`font-display text-4xl ${isQuad ? "text-primary" : "text-green-500"}`}>
+                    <p className={`font-display text-2xl md:text-4xl ${isQuad ? "text-primary" : "text-green-500"}`}>
                       {vehicle.price}
                     </p>
                   </div>
-                  <Button variant={isQuad ? "quad" : "cross"} size="xl" asChild>
+                  <Button variant={isQuad ? "quad" : "cross"} size="lg" className="w-full sm:w-auto" asChild>
                     <Link to="/reservation">Réserver Maintenant</Link>
                   </Button>
                 </div>
