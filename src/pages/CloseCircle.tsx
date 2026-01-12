@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Users, Lock, Star, Zap, Crown, Shield, Sparkles } from "lucide-react";
+import { Users, Lock, Star, Zap, Shield, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -73,7 +73,7 @@ const CloseCircle = () => {
           opacity: 1,
           y: 0
         }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6">
-            <Crown className="w-4 h-4 text-primary" />
+            
             <span className="font-body text-xs sm:text-sm text-primary font-semibold tracking-widest uppercase">
               Adhésion Exclusive
             </span>
