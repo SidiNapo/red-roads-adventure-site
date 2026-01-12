@@ -120,52 +120,41 @@ const About = () => {
             nous créons des expériences inoubliables depuis le cœur du Maroc.
           </motion.p>
 
-          {/* Floating stats */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 40
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          delay: 0.7
-        }} className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16">
-            {[{
-            value: "500+",
-            label: "Aventures"
-          }, {
-            value: "10+",
-            label: "Véhicules"
-          }, {
-            value: "100%",
-            label: "Passion"
-          }].map(stat => <div key={stat.label} className="text-center">
-                <div className="font-display text-3xl sm:text-4xl md:text-5xl text-primary">{stat.value}</div>
-                <div className="font-body text-xs sm:text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
-              </div>)}
+        </div>
+      </section>
+
+      {/* Stats Section - Clean & Elegant */}
+      <section className="relative z-20 -mt-16 md:-mt-20 pb-8">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ delay: 0.7 }}
+            className="bg-card/80 backdrop-blur-xl rounded-2xl md:rounded-3xl border border-border/50 shadow-adventure p-6 md:p-10 max-w-3xl mx-auto"
+          >
+            <div className="grid grid-cols-3 gap-4 md:gap-8">
+              {[
+                { value: "500+", label: "AVENTURES" },
+                { value: "10+", label: "VÉHICULES" },
+                { value: "100%", label: "PASSION" }
+              ].map((stat, index) => (
+                <div key={stat.label} className="text-center">
+                  <motion.div 
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.8 + index * 0.1 }}
+                    className="font-display text-2xl sm:text-3xl md:text-5xl text-primary mb-2"
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div className="font-body text-[10px] sm:text-xs md:text-sm text-muted-foreground tracking-wider">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
-
-        {/* Bottom fade scroll indicator - Hidden on mobile */}
-        <motion.div initial={{
-        opacity: 0
-      }} animate={{
-        opacity: 1
-      }} transition={{
-        delay: 1
-      }} className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block">
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-body text-xs text-muted-foreground uppercase tracking-widest">Découvrir</span>
-            <motion.div animate={{
-            y: [0, 8, 0]
-          }} transition={{
-            duration: 1.5,
-            repeat: Infinity
-          }} className="w-6 h-10 rounded-full border-2 border-primary/50 flex justify-center pt-2">
-              <div className="w-1.5 h-3 bg-primary rounded-full" />
-            </motion.div>
-          </div>
-        </motion.div>
       </section>
 
       {/* Nature Gallery Strip */}
