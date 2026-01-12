@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Users, Lock, Star, Zap } from "lucide-react";
+import { Users, Lock, Star, Zap, Crown, Shield, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import VehicleCard from "@/components/VehicleCard";
+import VehicleShowcaseCard from "@/components/VehicleShowcaseCard";
 import hero1 from "@/assets/hero-1.jpg";
+import nature1 from "@/assets/nature-1.jpg";
+import nature2 from "@/assets/nature-2.jpg";
+import nature3 from "@/assets/nature-3.jpg";
+import quad1 from "@/assets/quad-1.jpg";
 import { vehicles } from "@/data/vehicles";
 
 const benefits = [
@@ -43,14 +47,36 @@ const CloseCircle = () => {
           style={{ backgroundImage: `url(${hero1})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+        
+        {/* Floating Elements */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.3, scale: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="absolute top-32 left-10 hidden lg:block"
+        >
+          <div className="w-20 h-20 rounded-full bg-primary/20 blur-2xl" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.3, scale: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="absolute bottom-32 right-10 hidden lg:block"
+        >
+          <div className="w-32 h-32 rounded-full bg-secondary/20 blur-3xl" />
+        </motion.div>
+
         <div className="relative z-10 text-center px-4 py-12 md:py-0">
-          <motion.span
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block font-body text-xs sm:text-sm text-primary font-semibold tracking-widest uppercase mb-4"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6"
           >
-            Adhésion Exclusive
-          </motion.span>
+            <Crown className="w-4 h-4 text-primary" />
+            <span className="font-body text-xs sm:text-sm text-primary font-semibold tracking-widest uppercase">
+              Adhésion Exclusive
+            </span>
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,28 +124,88 @@ const CloseCircle = () => {
         </div>
       </section>
 
-      {/* Vehicles */}
-      <section className="py-24 bg-gradient-dark">
-        <div className="container mx-auto px-4">
+      {/* Vehicles Section - Creative Design */}
+      <section className="py-24 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary/50 to-transparent" />
+        
+        {/* Decorative Images */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 0.15, x: 0 }}
+          viewport={{ once: true }}
+          className="absolute left-0 top-1/4 w-64 h-96 hidden xl:block"
+        >
+          <img src={nature1} alt="" className="w-full h-full object-cover rounded-r-3xl" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 0.15, x: 0 }}
+          viewport={{ once: true }}
+          className="absolute right-0 bottom-1/4 w-64 h-96 hidden xl:block"
+        >
+          <img src={nature3} alt="" className="w-full h-full object-cover rounded-l-3xl" />
+        </motion.div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="font-body text-sm text-primary font-semibold tracking-widest uppercase">
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 mb-6"
+            >
+              <Sparkles className="w-8 h-8 text-primary" />
+            </motion.div>
+            <span className="block font-body text-sm text-primary font-semibold tracking-widest uppercase mb-4">
               Flotte Premium
             </span>
-            <h2 className="font-display text-4xl md:text-5xl mt-4 text-foreground tracking-wider">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wider mb-4">
               NOS VÉHICULES
             </h2>
+            <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+              Découvrez notre collection exclusive de machines d'exception. 
+              Cliquez sur un véhicule pour explorer l'expérience et réserver directement.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {vehicles.map((vehicle) => (
-              <VehicleCard key={vehicle.name} {...vehicle} />
+          {/* Creative Vehicle Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {vehicles.map((vehicle, index) => (
+              <motion.div
+                key={vehicle.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+              >
+                <VehicleShowcaseCard {...vehicle} />
+              </motion.div>
             ))}
           </div>
+
+          {/* Bottom Decorative Element */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-muted/50 border border-border/50">
+              <Shield className="w-5 h-5 text-primary" />
+              <span className="font-body text-sm text-muted-foreground">
+                Tous nos véhicules sont assurés et entretenus quotidiennement
+              </span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
