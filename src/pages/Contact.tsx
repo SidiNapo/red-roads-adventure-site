@@ -205,23 +205,6 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator - Hidden on mobile */}
-        <motion.div initial={{
-        opacity: 0
-      }} animate={{
-        opacity: 1
-      }} transition={{
-        delay: 1.2
-      }} className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block">
-          <motion.div animate={{
-          y: [0, 10, 0]
-        }} transition={{
-          duration: 2,
-          repeat: Infinity
-        }} className="flex flex-col items-center gap-2">
-            <Navigation className="w-5 h-5 text-primary rotate-180" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Contact Info Cards */}
