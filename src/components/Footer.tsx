@@ -153,13 +153,13 @@ const Footer = () => {
             <p className="font-body text-sm text-muted-foreground">
               © 2024 Red Roads Adventure. Tous droits réservés.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="font-body text-sm text-muted-foreground hover:text-primary transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+              <Link to="/privacy-policy" className="font-body text-sm text-muted-foreground hover:text-primary transition-colors">
                 Politique de Confidentialité
-              </a>
-              <a href="#" className="font-body text-sm text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms-conditions" className="font-body text-sm text-muted-foreground hover:text-primary transition-colors">
                 Conditions Générales
-              </a>
+              </Link>
             </div>
           </div>
         </div>
